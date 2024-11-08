@@ -15,4 +15,4 @@ jobs:
         run: docker login --username samar.khaled22164@ci.menofia.edu.eg --password Mull07689
 
       - name: "Build Docker image"
-        run: docker build -t samar.khaled22164@ci.menofia.edu.eg/my-image . 
+        run: docker build -t samarkhaled427/my-image . 

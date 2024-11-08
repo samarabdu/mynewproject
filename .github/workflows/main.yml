@@ -1,17 +1,18 @@
 on:
-   push:
-      branches:
-          -master
+  push:
+    branches:
+      - master  # إضافة مسافة بعد "-" لتصحيح اسم الفرع
 
 jobs:
-   build:
-      runs-on: ubuntu_latest
+  build:
+    runs-on: ubuntu-latest  # تصحيح إلى ubuntu-latest بدون underscore
 
     steps:
-       -uses: actions/checkout@v3
+      - name: "Checkout repository"
+        uses: actions/checkout@v3
 
-       -name: "login to docker hub"
-        run:docker login --username samar.khaled22164@ci.menofia.edu.eg --password Mull07689
+      - name: "Login to Docker Hub"
+        run: docker login --username samar.khaled22164@ci.menofia.edu.eg --password Mull07689
 
-        -name: "bulding docker image"
-         run: docker build -t samar.khaled22164@ci.menofia.edu.eg /my image
+      - name: "Build Docker image"
+        run: docker build -t samar.khaled22164/my-image . 

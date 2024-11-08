@@ -15,4 +15,4 @@ jobs:
         run: docker login --username samarkhaled822 --password samarkhaled822
 
       - name: "Build Docker image"
-        run: docker build -t samarkhaled822/my-image 
+        run: docker build -t samarkhaled822/my-image  .

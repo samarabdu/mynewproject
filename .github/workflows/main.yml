@@ -3,7 +3,7 @@ on:
       branches:
           -master
 
-jibs:
+jobs:
    build:
       runs-on: ubuntu_latest
 
@@ -15,4 +15,3 @@ jibs:
 
         -name: "bulding docker image"
          run: docker build -t samar.khaled22164@ci.menofia.edu.eg /my image
-         

@@ -12,7 +12,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: "Login to Docker Hub"
-        run: docker login --username samar.khaled22164@ci.menofia.edu.eg --password Mull07689
+        run: docker login --username samarkhaled427 --password Mull07689
 
       - name: "Build Docker image"
         run: docker build -t samarkhaled427/my-image . 

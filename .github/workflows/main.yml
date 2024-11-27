@@ -1,18 +1,32 @@
 on:
   push:
     branches:
-      - master  # إضافة مسافة بعد "-" لتصحيح اسم الفرع
-
+      - master
 jobs:
   build:
-    runs-on: ubuntu-latest  # تصحيح إلى ubuntu-latest بدون underscore
+    runs-on: ubuntu-latest
 
     steps:
-      - name: "Checkout repository"
+      - name: 'Testing Actions of The GitHub'
+        run: pwd
+
+      - name: ' Printing  Name'
+        run: echo 'samar khaled'
+
+      - name: 'Printing File Content Before using uses'
+        run: ls
+
+      - name: 'Checkout code'
         uses: actions/checkout@v3
 
-      - name: "Login to Docker Hub"
-        run: docker login --username samarkhaled822 --password samarkhaled822
+      - name: 'Printing File Content After using uses'
+        run: ls
 
-      - name: "Build Docker image"
-        run: docker build -t samarkhaled822/my-image  .
+      - name: "Login to Docker Hub"
+        run: docker login --username ${{ secrets.Docker_Username }} --password ${{ secrets.Docker_Basssword }}
+
+      - name: "Building Docker Hub image"
+        run: docker build -t  ${{ secrets.Docker_Username }}/samartask2 .
+
+      - name: "Pushing image to Docker Hub "
+        run: docker push  ${{ secrets.Docker_Username }}/samartask2 
